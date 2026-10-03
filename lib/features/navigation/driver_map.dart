@@ -17,7 +17,7 @@ class DriverMap extends StatefulWidget {
 class _DriverMapState extends State<DriverMap> {
   MapboxMap? _map;
   PointAnnotationManager? _points;
-  LineAnnotationManager? _lines;
+  PolylineAnnotationManager? _lines;
 
   @override
   void didUpdateWidget(covariant DriverMap oldWidget) {
@@ -30,7 +30,7 @@ class _DriverMapState extends State<DriverMap> {
   Future<void> _onMapCreated(MapboxMap map) async {
     _map = map;
     _points = await map.annotations.createPointAnnotationManager();
-    _lines = await map.annotations.createLineAnnotationManager();
+    _lines = await map.annotations.createPolylineAnnotationManager();
     await _render();
   }
 
@@ -48,7 +48,7 @@ class _DriverMapState extends State<DriverMap> {
     ));
     final route = widget.route;
     if (route != null) {
-      await _lines?.create(LineAnnotationOptions(
+      await _lines?.create(PolylineAnnotationOptions(
         geometry: LineString(coordinates: route.polyline.map((p) => Position(p.longitude, p.latitude)).toList()),
         lineColor: 0xff0077ff,
         lineWidth: 6,
