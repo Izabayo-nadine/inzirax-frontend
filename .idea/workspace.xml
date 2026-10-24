@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="507385a0-e36b-4bd4-b1ca-d471516beaeb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/app_config.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/app_config.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,10 +35,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6,
-  "fromUser": false
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6,
+  &quot;fromUser&quot;: false
+}</component>
   <component name="ProjectId" id="3KI10GzZQs7fk8RggKQABs0aJIl" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" />
@@ -53,6 +55,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "CidrDebugProfileConversion": "true",
+    "Flutter.main.dart.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
@@ -60,9 +63,13 @@
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "main",
+    "io.flutter.project.isFirstOpen": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/project/inzirax/inzirax-frontend"
+    "last_opened_file_path": "C:/project/inzirax/inzirax-frontend",
+    "settings.editor.selected.configurable": "AndroidSdkUpdater",
+    "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
   <component name="TaskManager">

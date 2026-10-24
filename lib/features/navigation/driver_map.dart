@@ -59,7 +59,10 @@ class _DriverMapState extends State<DriverMap> {
       center: point,
       zoom: widget.followDriver ? 16.5 : 14,
       bearing: widget.followDriver ? position.heading : 0,
-      pitch: widget.followDriver ? 55 : 0,
+      pitch: widget.followDriver ? 
+      
+      
+      55 : 0,
     ));
   }
 

@@ -6,7 +6,8 @@ class AppConfig {
     'INZIRAX_API_URL',
     defaultValue: 'http://10.0.2.2:8000',
   );
-  static const mapboxAccessToken = String.fromEnvironment('MAPBOX_ACCESS_TOKEN');
+  static const String mapboxAccessToken =
+      String.fromEnvironment('MAPBOX_ACCESS_TOKEN');
 
   static Uri get apiBaseUri => Uri.parse(apiUrl);
 
