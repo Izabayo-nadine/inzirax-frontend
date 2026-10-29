@@ -47,3 +47,12 @@ kotlin {
 flutter {
     source = "../.."
 }
+
+configurations.all {
+    resolutionStrategy {
+        // Force a single version of play-services-location to avoid
+        // IncompatibleClassChangeError between flutter_background_geolocation
+        // (which bundles its own copy) and geolocator (which pulls from Google Maven).
+        force("com.google.android.gms:play-services-location:21.3.0")
+    }
+}
