@@ -9,3 +9,6 @@ android/.gradle/
 android/local.properties
 ios/Flutter/Generated.xcconfig
 ios/Flutter/flutter_export_environment.sh
+
+# IDE — never commit run configs (they can contain secrets like API tokens)
+.idea/

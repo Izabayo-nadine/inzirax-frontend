@@ -43,16 +43,16 @@ class _DriverMapState extends State<DriverMap> {
     final point = Point(coordinates: Position(position.point.longitude, position.point.latitude));
     await _points?.create(PointAnnotationOptions(
       geometry: point,
-      iconColor: 0xff006d77,
+      iconColor: 0xff00d4aa, // teal
       iconSize: 1.4,
     ));
     final route = widget.route;
     if (route != null) {
       await _lines?.create(PolylineAnnotationOptions(
         geometry: LineString(coordinates: route.polyline.map((p) => Position(p.longitude, p.latitude)).toList()),
-        lineColor: 0xff0077ff,
+        lineColor: 0xff6c63ff, // electric violet
         lineWidth: 6,
-        lineOpacity: 0.85,
+        lineOpacity: 0.9,
       ));
     }
     await map.setCamera(CameraOptions(
@@ -69,19 +69,36 @@ class _DriverMapState extends State<DriverMap> {
   @override
   Widget build(BuildContext context) {
     if (AppConfig.mapboxAccessToken.isEmpty) {
-      return const ColoredBox(
-        color: Color(0xffe8f1f2),
-        child: Center(child: Text('Set MAPBOX_ACCESS_TOKEN to show the map.')),
+      return Container(
+        color: const Color(0xff0d0f14),
+        child: const Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(Icons.map_outlined, color: Color(0xff8b949e), size: 48),
+              SizedBox(height: 12),
+              Text(
+                'Set MAPBOX_ACCESS_TOKEN to show the map.',
+                style: TextStyle(color: Color(0xff8b949e), fontSize: 14),
+                textAlign: TextAlign.center,
+              ),
+            ],
+          ),
+        ),
       );
     }
     final point = widget.position?.point;
     return MapWidget(
       key: const ValueKey('inzirax-map'),
       cameraOptions: CameraOptions(
-        center: point == null ? null : Point(coordinates: Position(point.longitude, point.latitude)),
+        center: point == null
+            ? null
+            : Point(
+                coordinates:
+                    Position(point.longitude, point.latitude)),
         zoom: point == null ? 3 : 14,
       ),
-      styleUri: MapboxStyles.MAPBOX_STREETS,
+      styleUri: MapboxStyles.DARK,
       onMapCreated: _onMapCreated,
     );
   }

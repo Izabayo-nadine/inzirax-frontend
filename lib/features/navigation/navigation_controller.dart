@@ -139,6 +139,35 @@ class NavigationController extends StateNotifier<NavigationState> {
     }
   }
 
+  /// Plan a route when the user explicitly provides BOTH origin and destination.
+  Future<void> selectDestinationWithOrigin(
+      PlaceSuggestion origin, PlaceSuggestion destination) async {
+    if (ref.read(sessionProvider) == null) {
+      state = state.copyWith(error: 'Sign in before planning a route.');
+      return;
+    }
+    state = state.copyWith(isLoading: true, destination: destination, clearError: true);
+    try {
+      final routes = await RouteRepository(
+              ApiClient(() => ref.read(sessionProvider)))
+          .plan(
+        origin: origin.point,
+        originName: origin.name,
+        destination: destination,
+      );
+      state = state.copyWith(
+        routes: routes,
+        selectedRoute: routes.where((r) => r.isRecommended).firstOrNull ??
+            routes.firstOrNull,
+        isLoading: false,
+      );
+    } on AppException catch (error) {
+      state = state.copyWith(isLoading: false, error: error.message);
+    } catch (error) {
+      state = state.copyWith(isLoading: false, error: 'Could not plan route: $error');
+    }
+  }
+
   void selectRoute(RouteCandidate route) => state = state.copyWith(selectedRoute: route);
 
   Future<void> startNavigation() async {
