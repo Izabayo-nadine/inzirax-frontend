@@ -63,7 +63,7 @@ class InziraxApp extends ConsumerWidget {
         ),
         iconTheme: IconThemeData(color: onSurface),
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: surface,
         surfaceTintColor: Colors.transparent,
         elevation: 0,
